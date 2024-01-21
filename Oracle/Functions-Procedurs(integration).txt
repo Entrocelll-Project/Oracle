@@ -1,0 +1,69 @@
+--CONNECTION INFO
+--IP:34.125.2.150
+--PORT:1521
+--SID:FREE
+--USERNAME:C##MTH
+--PASSWORD:123456
+------------------------------------------------------------------------------------------------------------------------
+
+--LOGIN FUNCTION:C##MTH.ENTEROCELL.login
+--PARAMETRES MSISDN:TELEFON NUMARASI,PASSWORD:SİFRE
+--RETURN 1:SUCCES 0:FAIL
+--SAMPLE CODE:v_counter:= C##MTH501_1.ENTEROCELL.login('5530344623','0');
+
+--FORGET PASSWORD:C##MTH.ENTEROCELL.forget_password
+--PARAMETRES:EMAIL,MSISDN
+--RETURN:NULL:"Gecersiz MSISDN", NOT NULL:RETURN P_PASSWORD
+--SAMPLE CODE:C##MTH501_1.ENTEROCELL.forget_password('deneme1@gmail.com','5530344623');
+
+--REMAINING
+--get_remaining_data,get_remaining_sms,get_remaining_voice
+--PARAMETRES:MSISDN
+--SAMPLE CODE:C##MTH.ENTEROCELL.get_remaining_data('5530344623');
+              C##MTH501_1.ENTEROCELL.get_remaining_sms('5530344623');
+              C##MTH501_1.ENTEROCELL.get_remaining_voice('5530344623');
+---------------------------------------------------------------------------------------------------------------------------
+--PROCEDURES
+
+--create_subscriber
+--update_data
+--update_sms
+--update_voice
+
+
+
+--CREATE SUBSCRIBE:
+
+--PARAMETRES:SUBSC_ID,MSISDN,NAME,SURNAME,EMAIL,PASSWORD,PACKAGE_ID
+--SAMPLE CODE:C##MTH.ENTEROCELL.create_subscribe('1','5530344623','Yasin','Emir','deneme1@gmail.com','0',PACKAGE_ID);
+
+
+--UPDATE PROCEDURES:
+
+
+
+UPDATE_DATA:
+--C##MTH501_1.ENTEROCELL.update_data
+--PARAMETRES:ID,MSISDN,amount IN NUMBER,PRICE
+--SAMPLE CODE:C##MTH.ENTEROCELL.update_data('1,'5530344623','data','price');
+
+
+UPDATE_SMS:
+--C##MTH.ENTEROCELL.update_sms
+--PARAMETRES:ID,MSISDN,amount IN NUMBER,PRICE
+--SAMPLE CODE:C##MTH501_1.ENTEROCELL.update_sms('1,'5530344623','sms','price');
+
+
+
+UPDATE_VOICE:
+--C##MTH.ENTEROCELL.update_voıce
+--PARAMETRES:ID,MSISDN,amount IN NUMBER,PRICE
+--SAMPLE CODE:C##MTH501_1.ENTEROCELL.update_voice('1,'5530344623','voice','price');
+
+
+
+--INSERT_USAGE_RECORD
+--C##MTH.ENTEROCELL.insert_usage_record
+--PARAMETRES:MSISDN,USAGE_DATE,VOICE_DURATION,SMS_COUNT,DATA_USAGE,INTERNET_PAGE,DESTINATION
+--SAMPLE CODE:C##MTH501_1.ENTEROCELL.insert_usage_record('5530344623',SYSTIMESTAMP, VOICE_DURATION, SMS_COUNT, DATA_USAGE, 'www.example.com', 'Destination');
+
